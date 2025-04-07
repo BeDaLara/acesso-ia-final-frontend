@@ -94,11 +94,19 @@
   </script>
   
   <style>
-  .img-preview {
-    max-width: 200px;
-    max-height: 200px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 5px;
-  }
+ .img-preview {
+max-width: 100%;
+max-height: 300px;
+border-radius: 10px;
+border: 3px solid #ddd;
+}
+
+  .dropzone {
+  border: 2px dashed #007bff;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center; 
+  background-color: #f8f9fa; 
+  width: 500px;
+}
   </style>

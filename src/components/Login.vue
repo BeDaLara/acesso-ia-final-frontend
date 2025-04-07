@@ -1,4 +1,3 @@
-
 <template>
   <div class="login-container">
     <div class="login">
@@ -19,6 +18,12 @@
               </button>
           </div>
       </form>
+
+      <!-- Esqueci a senha -->
+      <div class="text-center mt-2">
+        <router-link to="/recuperar-senha">Esqueci minha senha</router-link>
+      </div>
+      
     </div>
   </div>
 </template>
@@ -40,7 +45,7 @@ export default {
   methods: {
     async Processarlogin() {
       try{
-        const response = await axios.post('https://localhost:7269/api/Login/autentificar', this.dadosLogin);
+        const response = await axios.post('https://localhost:7269/api/Login/autenticar', this.dadosLogin);
         localStorage.setItem('dados-usuario-logado', 
         JSON.stringify(response.data));
         
