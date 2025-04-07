@@ -25,7 +25,7 @@
 </li>
 
 <li class="nav-item">
-  <router-link class="nav-link" to="/home/acessos/listar">Comparar Imagens</router-link>
+  <router-link class="nav-link" to="/home/comparar-imagens">Comparar Imagens</router-link>
 </li>
 
           </ul>
