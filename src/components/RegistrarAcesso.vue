@@ -19,7 +19,7 @@
           <!-- Campo data/hora -->
           <div class="form-group mb-4">
             <label for="dataHora">Data e Hora do Acesso</label>
-            <input type="datetime-local" v-model="acesso.data_hora_acesso" class="form-control" required>
+            <input type="datetime-local" v-model="acesso.dataHoraAcesso" class="form-control" required>
           </div>
 
           <div class="text-center">
@@ -45,7 +45,7 @@ export default {
     return {
       acesso: {
         idUsuario: '',
-        data_hora_acesso: ''
+        dataHoraAcesso: ''
       },
       usuarios: []
     };
@@ -64,15 +64,16 @@ export default {
     },
     async registrarAcesso() {
       try {
-        await axios.post("https://localhost:7269/api/Login/atualizar-senha", this.acesso);
+        await axios.post("https://localhost:7269/api/v1/historico/registrar", this.acesso);
         Swal.fire({
           title: "Sucesso!",
           text: "Registro de acesso salvo com sucesso.",
           icon: "success",
           confirmButtonText: "OK"
         });
+
         this.acesso.idUsuario = '';
-        this.acesso.data_hora_acesso = '';
+        this.acesso.dataHoraAcesso = '';
       } catch (error) {
         Swal.fire("Erro!", "Não foi possível registrar o acesso.", "error");
         console.error(error);
